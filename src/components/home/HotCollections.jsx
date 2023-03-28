@@ -95,7 +95,7 @@ const HotCollections = () => {
                       </div>
                     </div>
                   ))
-                : new Array(4).fill(0).map((_, index) => (
+                : new Array(6).fill(0).map((_, index) => (
                     <div
                       className="col-lg-3 col-md-6 col-sm-6 col-xs-12 keen-slider__slide"
                       key={index}
@@ -103,7 +103,7 @@ const HotCollections = () => {
                       <div className="nft_coll">
                         <div className="nft_wrap">
                           <Link to="/">
-                            <Skeleton width={"100%"} height={"80%"} />
+                            <Skeleton width={"100%"} height={"auto"} />
                           </Link>
                         </div>
                         <div className="nft_coll_pp">
