@@ -68,7 +68,7 @@ const HotCollections = () => {
                     >
                       <div className="nft_coll">
                         <div className="nft_wrap">
-                          <Link to={`/${item.nftId}`}>
+                          <Link to={`/item-details/${item.nftId}`}>
                             <img
                               src={item.nftImage}
                               className="lazy img-fluid"
@@ -77,7 +77,7 @@ const HotCollections = () => {
                           </Link>
                         </div>
                         <div className="nft_coll_pp">
-                          <Link to={`/${item.authorId}`}>
+                          <Link to={`/author/${item.authorId}`}>
                             <img
                               className="lazy pp-coll"
                               src={item.authorImage}
@@ -87,7 +87,7 @@ const HotCollections = () => {
                           <i className="fa fa-check"></i>
                         </div>
                         <div className="nft_coll_info">
-                          <Link to={`/test`}>
+                          <Link to={"/exlore"}>
                             <h4>{item.title}</h4>
                           </Link>
                           <span>{`ERC-${item.code}`}</span>
@@ -102,22 +102,22 @@ const HotCollections = () => {
                     >
                       <div className="nft_coll">
                         <div className="nft_wrap">
-                          <Link to="/">
+                          <div>
                             <Skeleton width={"100%"} height={"auto"} />
-                          </Link>
+                          </div>
                         </div>
                         <div className="nft_coll_pp">
-                          <Link to="/">
+                          <div>
                             <Skeleton
                               width={"3rem"}
                               height={"3rem"}
                               borderRadius={"9999px"}
                             />
-                          </Link>
+                          </div>
                           <i className="fa fa-check"></i>
                         </div>
                         <div className="nft_coll_info">
-                          <Link to="/">
+                          <div>
                             <h4>
                               <Skeleton
                                 width={"6rem"}
@@ -125,7 +125,7 @@ const HotCollections = () => {
                                 borderRadius={"12px"}
                               />
                             </h4>
-                          </Link>
+                          </div>
                           <span>
                             <Skeleton
                               width={"3rem"}
