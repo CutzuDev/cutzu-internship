@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import AuthorImage from "../../images/author_thumbnail.jpg";
+
 import Skeleton from "../UI/Skeleton";
 
 const TopSellers = () => {
@@ -17,7 +17,6 @@ const TopSellers = () => {
     let response = await axios.get(api);
     let responseData = await response.data;
     setresponseList(responseData);
-    console.log(responseData);
   }
 
   return (
@@ -36,7 +35,7 @@ const TopSellers = () => {
                 ? responseList.map((item, index) => (
                     <li key={index}>
                       <div className="author_list_pp">
-                        <Link to="/author">
+                        <Link to={`/author/${item.authorId}`}>
                           <img
                             className="lazy pp-author"
                             src={item.authorImage}
@@ -46,7 +45,7 @@ const TopSellers = () => {
                         </Link>
                       </div>
                       <div className="author_list_info">
-                        <Link to={`/author${item.authorId}`}>
+                        <Link to={`/author/${item.authorId}`}>
                           {item.authorName}
                         </Link>
                         <span>{item.price} ETH</span>
@@ -58,7 +57,7 @@ const TopSellers = () => {
                     .map((_, index) => (
                       <li key={index}>
                         <div className="author_list_pp">
-                          <Link to="/author">
+                          <Link to="">
                             <Skeleton
                               width={"3rem"}
                               height={"3rem"}
@@ -68,8 +67,7 @@ const TopSellers = () => {
                           </Link>
                         </div>
                         <div className="author_list_info">
-                          <Link to="/author">
-                            {" "}
+                          <Link to="">
                             <Skeleton
                               width={"6rem"}
                               height={"1rem"}
@@ -77,7 +75,6 @@ const TopSellers = () => {
                             />
                           </Link>
                           <span>
-                            {" "}
                             <Skeleton
                               width={"3rem"}
                               height={"1rem"}
