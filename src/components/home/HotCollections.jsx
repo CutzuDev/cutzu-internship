@@ -7,11 +7,9 @@ import Skeleton from "../UI/Skeleton";
 
 const HotCollections = () => {
   const [responseList, setresponseList] = useState(false);
-
+  const hotcollectionsApiLink = process.env.REACT_APP_FES_API;
   useEffect(() => {
-    fetchApiData(
-      "https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections"
-    );
+    fetchApiData(`${hotcollectionsApiLink}/hotCollections`);
   }, []);
 
   async function fetchApiData(api) {
