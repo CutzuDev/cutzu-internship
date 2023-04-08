@@ -28,7 +28,8 @@ const ExploreItems = () => {
 
   function handleValueChange(event) {
     const FilterValue = event.target.value;
-    fetchApiData(`${exploreApiLink}?filter=${FilterValue}`);
+    fetchApiData(`${exploreApiLink}/explore?filter=${FilterValue}`);
+    setrenderlimit(8);
   }
 
   return (
