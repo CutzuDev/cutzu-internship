@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 
 function App() {
-  // Any comment
+  // MAIN CODE !! DO NOT REMOVE
   return (
     <Router>
       <Nav />
