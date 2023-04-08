@@ -6,11 +6,9 @@ import BigCard from "../UI/BigCard";
 
 const NewItems = () => {
   const [responseList, setresponseList] = useState([]);
-
+  const newitemsApiLink = process.env.REACT_APP_FES_API;
   useEffect(() => {
-    fetchApiData(
-      "https://us-central1-nft-cloud-functions.cloudfunctions.net/newItems"
-    );
+    fetchApiData(`${newitemsApiLink}/newItems`);
   }, []);
 
   async function fetchApiData(api) {
@@ -49,9 +47,7 @@ const NewItems = () => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setresponseList((prev) => {
-        return prev.map((item) => item);
-      });
+      setresponseList((prev) => [...prev]);
     }, 1000);
 
     return () => clearInterval(intervalId);
