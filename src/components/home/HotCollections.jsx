@@ -57,7 +57,7 @@ const HotCollections = () => {
             </div>
           </div>
           <div className="navigation-wrapper">
-            <div ref={sliderRef} className="keen-slider">
+            <div ref={sliderRef} className="keen-slider wow fadeIn">
               {responseList
                 ? responseList.map((item, index) => (
                     <div

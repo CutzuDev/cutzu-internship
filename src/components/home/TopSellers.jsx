@@ -28,27 +28,16 @@ const TopSellers = () => {
             </div>
           </div>
           <div className="col-md-12">
-            <ol className="author_list">
+            <ol className="author_list wow fadeIn">
               {responseList.length
                 ? responseList.map((item, index) => (
-                    <li key={index}>
-                      <div className="author_list_pp">
-                        <Link to={`/author/${item.authorId}`}>
-                          <img
-                            className="lazy pp-author"
-                            src={item.authorImage}
-                            alt=""
-                          />
-                          <i className="fa fa-check"></i>
-                        </Link>
-                      </div>
-                      <div className="author_list_info">
-                        <Link to={`/author/${item.authorId}`}>
-                          {item.authorName}
-                        </Link>
-                        <span>{item.price} ETH</span>
-                      </div>
-                    </li>
+                    <TopSellerItem
+                      key={index}
+                      authorId={item.authorId}
+                      authorImage={item.authorImage}
+                      authorName={item.authorName}
+                      price={item.price}
+                    />
                   ))
                 : Array(12)
                     .fill(0)
@@ -91,3 +80,20 @@ const TopSellers = () => {
 };
 
 export default TopSellers;
+
+function TopSellerItem({ authorId, authorImage, authorName, price }) {
+  return (
+    <li>
+      <div className="author_list_pp">
+        <Link to={`/author/${authorId}`}>
+          <img className="lazy pp-author" src={authorImage} alt="" />
+          <i className="fa fa-check"></i>
+        </Link>
+      </div>
+      <div className="author_list_info">
+        <Link to={`/author/${authorId}`}>{authorName}</Link>
+        <span>{price} ETH</span>
+      </div>
+    </li>
+  );
+}
